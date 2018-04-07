@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14109"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -673,7 +674,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="SoundCloud_Helper" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -683,12 +684,12 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="IQv-IB-iLA">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" fullSizeContentView="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-			<connections>
+                        <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
                         </connections>
                     </window>
@@ -703,11 +704,76 @@
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="SoundCloud_Helper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="540" height="210"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SfO-fb-alr">
+                                <rect key="frame" x="18" y="173" width="504" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Paste in a SoundCloud URL" id="0N4-6t-b1E">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cwJ-7l-Qts">
+                                <rect key="frame" x="20" y="131" width="500" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="500" id="yha-aB-0Gh"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" placeholderString="ex. https://soundcloud.com/user-768265338/my_track_name" drawsBackground="YES" id="uYT-5X-ZZF">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2YF-MP-FOz">
+                                <rect key="frame" x="186" y="29" width="169" height="32"/>
+                                <buttonCell key="cell" type="push" title="Fetch SoundCloud ID" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="LAZ-eU-Kiq">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mtR-1O-fN4">
+                                <rect key="frame" x="185" y="102" width="170" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Found this SoundCloud ID:" id="FdD-kM-pJ5">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0lH-KL-d1V">
+                                <rect key="frame" x="250" y="77" width="41" height="17"/>
+                                <textFieldCell key="cell" selectable="YES" sendsActionOnEndEditing="YES" alignment="center" title="Label" id="lcP-zC-w9z">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="0lH-KL-d1V" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="0xO-Ys-UdS"/>
+                            <constraint firstItem="cwJ-7l-Qts" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="5rH-yW-KYc"/>
+                            <constraint firstItem="mtR-1O-fN4" firstAttribute="top" secondItem="cwJ-7l-Qts" secondAttribute="bottom" constant="12" id="BGj-ue-4h8"/>
+                            <constraint firstItem="0lH-KL-d1V" firstAttribute="top" secondItem="mtR-1O-fN4" secondAttribute="bottom" constant="8" id="Qni-Ec-egL"/>
+                            <constraint firstAttribute="trailing" secondItem="SfO-fb-alr" secondAttribute="trailing" constant="20" id="R1O-8g-dah"/>
+                            <constraint firstAttribute="trailing" secondItem="cwJ-7l-Qts" secondAttribute="trailing" constant="20" id="Tyr-vn-piu"/>
+                            <constraint firstItem="2YF-MP-FOz" firstAttribute="top" secondItem="0lH-KL-d1V" secondAttribute="bottom" constant="20" id="cs5-bz-m3Z"/>
+                            <constraint firstItem="SfO-fb-alr" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="d9q-wH-uaD"/>
+                            <constraint firstItem="SfO-fb-alr" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="elD-ew-I9e"/>
+                            <constraint firstAttribute="bottom" secondItem="2YF-MP-FOz" secondAttribute="bottom" constant="36" id="gGA-Fp-QAn"/>
+                            <constraint firstItem="mtR-1O-fN4" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="jmW-WO-pI4"/>
+                            <constraint firstItem="cwJ-7l-Qts" firstAttribute="top" secondItem="SfO-fb-alr" secondAttribute="bottom" constant="20" id="qe8-cQ-cJ9"/>
+                            <constraint firstItem="2YF-MP-FOz" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="uTi-pD-bT3"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="fetchButton" destination="2YF-MP-FOz" id="3dA-ff-kuB"/>
+                        <outlet property="infoTextField" destination="mtR-1O-fN4" id="eJz-Rh-0mo"/>
+                        <outlet property="outputTextField" destination="0lH-KL-d1V" id="Hdl-Nl-Vqf"/>
+                        <outlet property="urlTextField" destination="cwJ-7l-Qts" id="XQ2-wV-7pD"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
