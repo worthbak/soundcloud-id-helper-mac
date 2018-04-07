@@ -279,7 +279,7 @@
 				CODE_SIGN_ENTITLEMENTS = "SoundCloud Helper/SoundCloud Helper.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = M3LCGB9G7Q;
+				DEVELOPMENT_TEAM = H638JU8LNF;
 				INFOPLIST_FILE = "SoundCloud Helper/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -298,7 +298,7 @@
 				CODE_SIGN_ENTITLEMENTS = "SoundCloud Helper/SoundCloud Helper.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = M3LCGB9G7Q;
+				DEVELOPMENT_TEAM = H638JU8LNF;
 				INFOPLIST_FILE = "SoundCloud Helper/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
